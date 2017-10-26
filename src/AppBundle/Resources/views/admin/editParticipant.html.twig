@@ -1,0 +1,39 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Teilnehmer "{{ participant.firstname }} {{ participant.lastname }}" bearbeiten</h2>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="participant-overview">
+        <div class="participant">
+            <div class="personal-data">
+                <dl>
+                    <dt class="label">{{ form_label(form.firstname) }}</dt>
+                    <dd>{{ form_widget(form.firstname) }}</dd>
+                    <dd class="error">{{ form_errors(form.firstname) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.lastname) }}</dt>
+                    <dd>{{ form_widget(form.lastname) }}</dd>
+                    <dd class="error">{{ form_errors(form.lastname) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.email) }}</dt>
+                    <dd>{{ form_widget(form.email) }}</dd>
+                    <dd class="error">{{ form_errors(form.email) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.mobilenumber) }}</dt>
+                    <dd>{{ form_widget(form.mobilenumber) }}</dd>
+                    <dd class="error">{{ form_errors(form.mobilenumber) }}</dd>
+                </dl>
+            </div>
+            <span class="hint">* Pflichtfeld</span>
+            <div class="options">
+                {{ form_widget(form.submit) }}
+                <a href="{{ path('adminParticipantOverview') }}" class="important">Abbrechen</a>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

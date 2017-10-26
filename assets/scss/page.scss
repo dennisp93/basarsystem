@@ -1,0 +1,165 @@
+body {
+  background-color: $background-color;
+  color: $font-color-dark;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Dosis', sans-serif;
+
+  a {
+    color: $link-color;
+    font-family: 'Dosis', sans-serif;
+  }
+
+  section.content {
+    padding: 20px;
+  }
+}
+
+::selection {
+  background: $selection-color;
+}
+
+::-moz-selection {
+  background: $selection-color;
+}
+
+.menu {
+  padding: 30px 20px;
+  margin: 20px 0px;
+  background-color: $menu-background-color;
+
+  a {
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+
+    &:hover {
+      background-color: $link-background-color;
+    }
+  }
+
+  a.important {
+    &:hover {
+      background-color: $link-important-background-color;
+      color: $font-color-light;
+    }
+  }
+}
+
+.information-box {
+  background-color: $admin-menu-background-color;
+  color: $font-color-light;
+  padding: 20px;
+  margin: 10px 0 20px 0;
+
+  h3 {
+    font-size: 24px;
+    padding: 0 0 10px 0;
+  }
+
+  p {
+    margin-top: 20px;
+
+    strong,
+    b {
+      font-weight: bold;
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+
+    th, td {
+      padding: 5px 20px 5px 0;
+      line-height: 20px;
+    }
+
+    tr {
+      border-bottom: 1px solid #FFF;
+    }
+  }
+
+  p.hint {
+    padding: 30px 0 0 0;
+  }
+}
+
+form {
+  dl {
+    padding: 0 0 20px 0;
+  }
+
+  .label {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 0 5px 0;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    line-height: 34px;
+    padding: 0 5px;
+    width: 60%;
+    border: 2px solid $link-background-color;
+    box-sizing: border-box;
+    
+    @media all and (max-width: 1000px) {
+      width: 100%;
+    }
+  }
+
+  select {
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    padding: 10px 10px;
+    background-color: $item-background-color;
+    border: 2px solid $link-background-color;
+  }
+
+  .error {
+    color: $font-color-error;
+    font-size: 16px;
+    line-height: 34px;
+  }
+
+  .hint {
+    display: block;
+    font-size: 14px;
+    padding: 20px 0 0 0;
+  }
+
+  button {
+    color: $link-color;
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 0;
+    background-color: $item-background-color;
+    padding: 10px 20px;
+    margin: 0px 10px 0 0;
+    float: left;
+
+    &:hover {
+      background-color: $link-background-color;
+      cursor: pointer;
+    }
+
+    &.important {
+      &:hover {
+        background-color: $link-important-background-color;
+        color: $font-color-light;
+      }
+    }
+  }
+
+  &:after {
+    display: block;
+    content: ' ';
+    clear: both;
+  }
+}

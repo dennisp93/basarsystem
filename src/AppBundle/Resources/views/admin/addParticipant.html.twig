@@ -1,0 +1,41 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Neuen Benutzer hinzufügen</h2>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="item-overview">
+        <div class="item">
+            <h3>Nach dem Anlegen des Benutzers erhält dieser automatisch eine E-Mail mit allen relevanten Informationen.</h3>
+            <br />
+            <div class="specs">
+                <dl>
+                    <dt class="label">{{ form_label(form.firstname) }}</dt>
+                    <dd>{{ form_widget(form.firstname) }}</dd>
+                    <dd class="error">{{ form_errors(form.firstname) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.lastname) }}</dt>
+                    <dd>{{ form_widget(form.lastname) }}</dd>
+                    <dd class="error">{{ form_errors(form.lastname) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.email) }}</dt>
+                    <dd>{{ form_widget(form.email) }}</dd>
+                    <dd class="error">{{ form_errors(form.email) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.role) }}</dt>
+                    <dd>{{ form_widget(form.role) }}</dd>
+                    <dd class="error">{{ form_errors(form.role) }}</dd>
+                </dl>
+            </div>
+            <span class="hint">* Pflichtfeld</span>
+            <div class="options">
+                {{ form_widget(form.submit) }}
+                <a href="{{ path('overview') }}" class="important">Abbrechen</a>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Möchten Sie, {{ user.firstname }} {{ user.lastname }}, nicht mehr am Basar teilnehmen?</h2>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="participant-overview">
+        <div class="participant">
+            <h3>ACHTUNG! Alle von Ihnen eingetragenen Artikel so wie Ihre personenbezogenen Daten werden entgültig gelöscht!</h3>
+            <div class="options">
+                {{ form_widget(form.delete, {'attr': {'class': 'important'}}) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}
+

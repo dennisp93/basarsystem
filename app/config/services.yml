@@ -1,0 +1,9 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    MailProvider:
+        class: AppBundle\Mail\MailProvider
+        arguments: ['@mailer', '@twig', '%app.base_url%', '%app.base_path%']

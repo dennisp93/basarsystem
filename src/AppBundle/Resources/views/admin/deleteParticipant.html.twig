@@ -1,0 +1,24 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Teilnehmer "{{ participant.firstname }} {{ participant.lastname }}" löschen?</h2>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="participant-overview">
+        <div class="participant">
+            <h3>{{ participant.firstname }} {{ participant.lastname }}</h3>
+            <div class="personal-data">
+                <p><strong>E-Mail:</strong> {{ participant.email }}</p>
+                <p class="{% if participant.mobilenumber == null %}error{% endif %}"><strong>Mobilenummer:</strong> {{ participant.mobilenumber }}</p>
+            </div>
+            <div class="options">
+                {{ form_widget(form.delete, {'attr': {'class': 'important'}}) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}
+

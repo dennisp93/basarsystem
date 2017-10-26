@@ -1,0 +1,36 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Meine eingetragenen Artikel</h2>
+
+    <div class="information-box">
+        <h3>Wichtige Informationen zum Basar 2016 zusammengefasst:</h3>
+
+        <p>
+            Information zum Basar
+        </p>
+
+        <p>
+            Weitere Informationen zum Basar
+        </p>
+    </div>
+
+    <div class="item-overview">
+    {% for item in items %}
+        <div class="item">
+            <h3>{{ item.label }}</h3>
+            <div class="specs">
+                <p>Anzahl der Teile: {{ item.count }}</p>
+                <p>Größe: {{ item.size }}</p>
+                <p>Preis: {{ item.maxPrice }} €</p>
+                <p>VB Preis: {{ item.minPrice }} €</p>
+            </div>
+            <div class="options">
+                <a href="{{ path('editItem', {'id' : item.id}) }}">Bearbeiten</a>
+                <a href="{{ path('deleteItem', {'id' : item.id}) }}" class="important">Löschen</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

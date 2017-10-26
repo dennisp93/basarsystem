@@ -1,0 +1,56 @@
+h2 {
+  font-size: 32px;
+  color: $headline-color;
+  line-height: 64px;
+  text-transform: uppercase;
+}
+
+.item-overview {
+  .item {
+    padding: 20px;
+    margin: 0 0 20px 0;
+    background-color: $item-background-color;
+
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .specs {
+      p {
+        line-height: 26px;
+      }
+    }
+
+    .options {
+      padding: 10px 0 0 0;
+      margin: 20px 0 0 0;
+      border-top: 1px solid $link-background-color;
+
+      a {
+        display: inline-block;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px 20px;
+
+        &:hover {
+          background-color: $link-background-color;
+        }
+      }
+
+      a.important {
+        &:hover {
+          background-color: $link-important-background-color;
+          color: $font-color-light;
+        }
+      }
+
+      &:after {
+        display: block;
+        content: ' ';
+        clear: both;
+      }
+    }
+  }
+}

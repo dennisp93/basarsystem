@@ -1,0 +1,23 @@
+footer {
+  background-color: $footer-color;
+  width: 100%;
+  /*position: fixed;
+  bottom: 0;
+  left: 0;*/
+  text-align: center;
+
+  .shadow {
+    -webkit-box-shadow: 0px -5px 5px 0px rgba(145, 145, 145, 1);
+    -moz-box-shadow: 0px -5px 5px 0px rgba(145, 145, 145, 1);
+    box-shadow: 0px -5px 5px 0px rgba(145, 145, 145, 1);
+  }
+
+  ul {
+    padding: 20px 0;
+
+    li {
+      display: inline-block;
+      padding: 0 10px;
+    }
+  }
+}

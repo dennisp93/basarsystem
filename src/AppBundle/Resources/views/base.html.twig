@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}BasarSystem{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('css/master.css') }}" rel="stylesheet" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <header>
+            <h1>BasarSystem</h1>
+        </header>
+        <section class="content">
+
+            {% if is_granted('ROLE_USER') %}
+            <div class="menu">
+                <a href="{{ path('overview') }}">Meine Artikel</a>
+                <a href="{{ path('addItem') }}">Artikel hinzufügen</a>
+                <a href="{{ path('editParticipant') }}">meine Daten bearbeiten</a>
+                <a href="{{ path('leaveBasar') }}" class="important">meine Daten löschen</a>
+                <a href="{{ path('logout') }}">Ausloggen</a>
+            </div>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+            <div class="menu admin-menu">
+                <a href="{{ path('adminOverview') }}">Alle Artikel</a>
+                <a href="{{ path('adminParticipantOverview') }}">Alle Benutzer</a>
+                <a href="{{ path('adminAddParticipant') }}">Benutzer hinzufügen</a>
+                <a href="{{ path('adminIndexCards') }}">Karteikarten</a>
+                <a href="{{ path('adminExcelOverview') }}">Listen</a>
+            </div>
+            {% endif %}
+
+            {% block body %}{% endblock %}
+        </section>
+        <footer>
+            <ul>
+                <li>&copy; 2016</li>
+                <li><a href="mailto:">Hilfe / Feedback</a></li>
+            </ul>
+        </footer>
+        {% block javascripts %}
+            <script src="{{ asset('js/app.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

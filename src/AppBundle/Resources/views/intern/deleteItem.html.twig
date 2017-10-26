@@ -1,0 +1,26 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Folgenden Artikel löschen?</h2>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="item-overview">
+        <div class="item">
+            <h3>{{ item.label }}</h3>
+            <div class="specs">
+                <p>Anzahl der Teile: {{ item.count }}</p>
+                <p>Größe: {{ item.size }}</p>
+                <p>Preis: {{ item.maxPrice }}</p>
+                <p>VB Preis: {{ item.minPrice }}</p>
+            </div>
+            <div class="options">
+                {{ form_widget(form.delete, {'attr': {'class': 'important'}}) }}
+                {{ form_widget(form.cancel) }}
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}
+

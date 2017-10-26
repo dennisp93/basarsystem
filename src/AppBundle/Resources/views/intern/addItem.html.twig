@@ -1,0 +1,122 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Neuen Artikel hinzufügen</h2>
+
+    <div class="information-box">
+        <h3>Information</h3>
+        <table>
+            <thead>
+                <th>Anzahl der Teile</th>
+                <th>Beschreibung</th>
+                <th>Größe</th>
+                <th>Preis in €</th>
+                <th>VB-Preis in €</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Schuhe</td>
+                    <td>37</td>
+                    <td>5,00</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Hose</td>
+                    <td>140</td>
+                    <td>12,00</td>
+                    <td>10,00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Hemd</td>
+                    <td>140</td>
+                    <td>5,00</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hemd, Weste</td>
+                    <td>146</td>
+                    <td>20,00</td>
+                    <td>10,00</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Kleid, Jacke, Tasche, Unterrock</td>
+                    <td>140</td>
+                    <td>100,00</td>
+                    <td>80,00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Kleid</td>
+                    <td>146</td>
+                    <td>80,00</td>
+                    <td>60,00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Kränzchen</td>
+                    <td>Einheitsgröße</td>
+                    <td>20,00</td>
+                    <td>15,00</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Unterrock</td>
+                    <td>140</td>
+                    <td>10,00</td>
+                    <td>8,00</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Anzug: Jacke, Hemd, Fliege, Hose, Weste, Gürtel, Einstecktuch</td>
+                    <td>146</td>
+                    <td>60,00</td>
+                    <td>50,00</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="hint">Sollte ein Kommunionkleid aus mehreren Teilen bestehen (z.b. Rock, Bluse, Schürze), so bitten wir diese mit aufzuführen!</p>
+    </div>
+
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="item-overview">
+        <div class="item">
+            <div class="specs">
+                <dl>
+                    <dt class="label">{{ form_label(form.label) }}</dt>
+                    <dd>{{ form_widget(form.label) }}</dd>
+                    <dd class="error">{{ form_errors(form.label) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.count) }}</dt>
+                    <dd>{{ form_widget(form.count) }}</dd>
+                    <dd class="error">{{ form_errors(form.count) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.size) }}</dt>
+                    <dd>{{ form_widget(form.size) }}</dd>
+                    <dd class="error">{{ form_errors(form.size) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.maxPrice) }}</dt>
+                    <dd>{{ form_widget(form.maxPrice) }}</dd>
+                    <dd class="error">{{ form_errors(form.maxPrice) }}</dd>
+                </dl>
+                <dl>
+                    <dt class="label">{{ form_label(form.minPrice) }}</dt>
+                    <dd>{{ form_widget(form.minPrice) }}</dd>
+                </dl>
+            </div>
+            <span class="hint">* Pflichtfeld</span>
+            <div class="options">
+                {{ form_widget(form.submit) }}
+                <a href="{{ path('overview') }}" class="important">Abbrechen</a>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

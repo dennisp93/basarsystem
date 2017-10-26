@@ -1,0 +1,22 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Alle Benutzer</h2>
+
+    <div class="participant-overview">
+        {% for participant in participants %}
+            <div class="participant">
+                <h3>{{ participant.firstname }} {{ participant.lastname }}</h3>
+                <div class="personal-data">
+                    <p><strong>E-Mail:</strong> {{ participant.email }}</p>
+                    <p class="{% if participant.mobilenumber == null %}error{% endif %}"><strong>Mobilenummer:</strong> {{ participant.mobilenumber }}</p>
+                </div>
+                <div class="options">
+                    <a href="{{ path('adminEditParticipant', {'id' : participant.id}) }}">Bearbeiten</a>
+                    <a href="{{ path('adminDeleteParticipant', {'id' : participant.id}) }}" class="important">Löschen</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

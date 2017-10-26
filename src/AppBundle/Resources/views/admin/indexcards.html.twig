@@ -1,0 +1,37 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% set participantCount = 0 %}
+
+{% block body %}
+    <h2>Karteikarten für den Verkauf</h2>
+
+    <div class="information-box">
+        <h3>Zum Ausdrucken der Karten:</h3>
+        <p>Im Browser Menü den Punkt "Drucken" auswählen.</p>
+    </div>
+
+    <div class="index-cards">
+        {% for participant in participants %}
+            {% set participantCount =  participantCount + 1 %}
+            <div class="card">
+                <h3>{{ participantCount }} - {{ participant.lastname }}, {{ participant.firstname }}</h3>
+                <p>Tel.: {{ participant.mobilenumber }}</p>
+                <table>
+                    <tbody>
+                        {% set itemCount = 0 %}
+                        {% for item in participant.items %}
+                            {% set itemCount =  itemCount + 1 %}
+                            <tr>
+                                <td class="label">{{ item.label }} {{ item.size }}</td>
+                                <td class="id">{{ participantCount }}-{{ itemCount }} x {{ item.count }}</td>
+                                <td class="price">P {{ item.maxPrice }} €</td>
+                                <td class="vb-price">VB {{ item.minPrice }} €</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

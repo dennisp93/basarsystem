@@ -1,0 +1,49 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Listen für den Verkauf</h2>
+
+    <div class="item-overview">
+        <div class="item">
+            <h3>Preisliste</h3>
+            <div class="specs">
+                <p>Preisliste mit den Artikelnummern und dem Preis (ohne VB)</p>
+            </div>
+            <div class="options">
+                <a href="{{ path('adminExcelPreisliste') }}">Download</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <h3>Haftungsausschluss</h3>
+            <div class="specs">
+                <p>Anbieterliste mit freien Felder für Unterschriften</p>
+            </div>
+            <div class="options">
+                <a href="{{ path('adminExcelHaftungsliste') }}">Download</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <h3>Anbieterliste</h3>
+            <div class="specs">
+                <p>Anbieterliste mit allen Daten, Artikeln und Preisen</p>
+            </div>
+            <div class="options">
+                <a href="{{ path('adminExcelAnbieterliste') }}">Download</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <h3>Kassenliste</h3>
+            <div class="specs">
+                <p>Kassenliste mit den Artikeln und den Rechenfunktionen</p>
+            </div>
+            <div class="options">
+                <a href="{{ path('adminExcelKassenliste') }}">Download</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

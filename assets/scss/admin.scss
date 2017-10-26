@@ -1,0 +1,106 @@
+.admin-menu {
+  background-color: $admin-menu-background-color;
+
+  a {
+    color: $font-color-dark;
+  }
+}
+
+.participant-overview {
+  .participant {
+    padding: 20px;
+    margin: 0 0 20px 0;
+    background-color: $item-background-color;
+
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .personal-data {
+      p {
+        display: inline-block;
+        margin: 0 20px 0 0;
+        line-height: 26px;
+
+        &.error {
+          background-color: $font-color-error;
+          color: $font-color-light;
+          padding: 0 10px;
+
+          strong {
+            font-weight: 400;
+          }
+        }
+
+        strong {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .options {
+      padding: 10px 0 0 0;
+      margin: 20px 0 0 0;
+      border-top: 1px solid $link-background-color;
+
+      a {
+        display: inline-block;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px 20px;
+
+        &:hover {
+          background-color: $link-background-color;
+        }
+      }
+
+      a.important {
+        &:hover {
+          background-color: $link-important-background-color;
+          color: $font-color-light;
+        }
+      }
+
+      &:after {
+        display: block;
+        content: ' ';
+        clear: both;
+      }
+    }
+  }
+}
+
+.index-cards {
+  .card {
+    background: #fff;
+    padding: 20px;
+    margin: 0 0 20px 0;
+
+    h3 {
+      font-size: 20px;
+      margin: 0 0 10px 0;
+    }
+
+    table {
+      width: 100%;
+      max-width: 500px;
+      text-align: left;
+
+      thead {
+        th {
+          font-weight: bold;
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            padding: 3px 0;
+          }
+        }
+      }
+    }
+  }
+}
